@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>title</title>
+</head>
+<body>
+    <div>
+        <h2 id="title">好きな曲を歌ってください</h2>
+        <p id="exp">教示文</p>
+        <button onclick=location.href="{{ url_for('record') }}" id="agree">同意</button>
+    </div>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

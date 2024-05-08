@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Quicksand:wght@300..700&family=Space+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900,300');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Quicksand:wght@300..700&family=Space+Mono&family=Zen+Maru+Gothic&display=swap');
+
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Zen Maru Gothic", "Quicksand", sans-serif;
+}
+
+#title {
+    font-family: "Zen Maru Gothic", "Quicksand", sans-serif;
+    text-align: center;
+}
+
+#exp {
+    font-family: "Zen Maru Gothic", "Quicksand", sans-serif;
+    text-align: center;
+}
+
+p {
+    text-align: center;
+}
+
+#agree {
+    font-family: "Zen Maru Gothic", "Quicksand", sans-serif;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    display: flex;
+    float: right;
+    background-color: rgb(39, 39, 39);
+    border: none;
+    border-radius: 5px;
+    width: 70px;
+    height: 40px;
+    margin: 5px;
+}
+
+.button-container{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-family: "Zen Maru Gothic", "Quicksand", sans-serif;
+}
+
+.container {
+    text-align: center;
+}
+
+button {
+    margin: 10px auto;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.button:active {
+    background-color: #ccc; /* 클릭 효과 */
+}
+
+.recording {
+    animation: blink-animation 2s ease-in-out infinite;
+}
+
+@keyframes blink-animation {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+#recordButton {
+    background-color: rgb(208, 34, 34);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    margin: 5px;
+}
+
+#recordButton.active::after {
+    content: '';
+    position: absolute;
+    top: -5px; left: -5px;
+    width: 60px; height: 60px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7);
+    animation: pulsate 2s infinite;
+}
+
+@keyframes pulsate {
+    0% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7); }
+    50% { transform: scale(1); box-shadow: 0 0 0 10px rgba(255, 0, 0, 0); }
+    100% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(255, 0, 0, 0); }
+}
+
+#stopButton {
+    background-color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 5px;
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+}
+
+#submitBtn{
+    background-color: rgb(133, 133, 133);
+    border: none;
+    border-radius: 5px;
+    width: 80px;
+    height: 50px;
+    margin: 5px;
+    font-family: "Quicksand", sans-serif;
+    color: white;
+}
+
+audio {
+    margin-top: 20px;
+    color: black;
+}
+
+canvas {
+    margin-top: 10px;
+    background-color: rgb(255, 255, 255);
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: 90%;
+    }
+}
+
+.modal {
+    display: none; /* 기본적으로 숨겨짐 */
+    position: fixed; /* Stay in place */
+    justify-content: center;
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    justify-content: center;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%; /* Could be more or less, depending on screen size */
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
